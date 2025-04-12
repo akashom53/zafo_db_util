@@ -17,7 +17,9 @@ export class App {
     }
 
 
-    async generator(count: number, createdAt?: Date, tag?: string, group?: string, page?: string, element?: string) {
+    async generator(count: number, obj: any/*createdAt?: Date, tag?: string, group?: string, page?: string, element?: string*/) {
+        const { createdAt, tag, group, page, element } = obj
+
         for (let i = 0; i < count; i++) {
             const dataRef = this.configLoader.data;
             const event = new EventModel(
